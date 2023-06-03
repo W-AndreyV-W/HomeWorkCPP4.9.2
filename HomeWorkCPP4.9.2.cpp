@@ -5,7 +5,7 @@ class big_integer {
 
 public:
 
-    big_integer(const std::string num) {
+    big_integer(const std::string& num) {
 
         for (int i = static_cast<int>(num.size()) - 1; i >= 0; i--) {
             big_num.push_back(static_cast<int>(num[i]) - 48);
@@ -14,13 +14,13 @@ public:
 
     big_integer(std::vector<int> num) : big_num(num) {}
 
-    big_integer(const big_integer&&) = delete;
+    //big_integer(const big_integer&) = delete;
 
     big_integer(big_integer&& other) noexcept : big_num(std::move(other.big_num)) {}
 
     ~big_integer() {}
 
-    big_integer& operator = (const big_integer&) = delete;
+    //big_integer& operator = (const big_integer&) = delete;
 
     big_integer& operator = (big_integer&& other) noexcept {
 
